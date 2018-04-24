@@ -33,12 +33,12 @@ void loop() {
 		// Closest
 		digitalWrite(ledPin, HIGH);
 		delay(50);
-		digitalWrite(led, LOW);
-	} else if (distance > closestDist && < closeDist) {
+		digitalWrite(ledPin, LOW);
+	} else if (distance > closestDist && distance < closeDist) {
 		// Close
 		digitalWrite(ledPin, HIGH);
 		delay(200);
-		digitalWrite(led, LOW);
+		digitalWrite(ledPin, LOW);
 		delay(250);
 	} else if (distance >= closeDist) {
 		// Far
