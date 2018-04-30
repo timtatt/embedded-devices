@@ -6,7 +6,7 @@ int echoPin = 10;
 long duration;
 int distance;
 
-int ultrasonicRange;
+int ultrasonicRange = 30;
 
 void setup() {
 	pinMode(ledPin, OUTPUT);
@@ -29,8 +29,10 @@ void loop() {
 	
 	Serial.print("Distance: ");
 	Serial.println(distance);
-
-	float buzzerLevel = distance / ultrasonicRange * 255;
+  
+	float buzzerLevel = (1.0 * ultrasonicRange / distance) * 20;
+  Serial.println(buzzerLevel);
+  
 	analogWrite(buzzerPin, buzzerLevel);
 	delay(100);
 }
